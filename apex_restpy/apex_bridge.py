@@ -3,7 +3,7 @@
 # Python adaptation of ApexBridge C++ library
 
 import logging
-from typing import Any, Optional
+from typing import Optional
 
 import requests
 

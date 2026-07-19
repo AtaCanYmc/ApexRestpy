@@ -2,7 +2,7 @@
 # Created by Ata Can Yaymacı
 # Python adaptation of ApexBridge C++ library
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 @dataclass

@@ -7,7 +7,7 @@ is required. Each test mirrors a specific behaviour from the original C++ code.
 """
 
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
 from apex_restpy import ApexBridge
 from apex_restpy.exceptions import ApexConnectionError, ApexResponseError
