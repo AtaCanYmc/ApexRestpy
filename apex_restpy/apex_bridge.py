@@ -3,7 +3,7 @@
 # Python adaptation of ApexBridge C++ library
 
 import logging
-from typing import Optional
+from typing import Optional, cast
 
 import requests
 
@@ -189,7 +189,7 @@ class ApexBridge:
         method: str = "GET",
         payload: Optional[dict] = None,
         url: Optional[str] = None,
-    ) -> dict:
+    ) -> dict[str, object]:
         """
         Send an HTTP request to the Oracle APEX REST endpoint.
 
@@ -244,7 +244,7 @@ class ApexBridge:
         self._log(f"[APEX BRIDGE] Response status: {response.status_code}")
 
         try:
-            return response.json()
+            return cast(dict[str, object], response.json())
         except ValueError as exc:
             self._log(f"[APEX BRIDGE] JSON decode error: {exc}")
             raise ApexResponseError(

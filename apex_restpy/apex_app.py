@@ -22,6 +22,7 @@ class ApexApp:
         token (str): Bearer token for authentication. Empty string if not needed.
         base_path (str): Base path prefix for all APEX REST endpoints.
     """
+
     schema: str
     token: str = ""
     base_path: str = "/pls/apex"

@@ -76,7 +76,7 @@ ignore = [
 known-first-party = ["apex_restpy"]
 
 [tool.mypy]
-python_version = "3.9"
+python_version = "3.10"
 strict = false
 warn_return_any = true
 warn_unused_configs = true

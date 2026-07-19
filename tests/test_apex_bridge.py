@@ -80,9 +80,7 @@ class TestAddPath(unittest.TestCase):
 
     def test_add_path_appends_to_last_endpoint(self):
         self.bridge.add_path("active")
-        self.assertEqual(
-            self.bridge.last_endpoint, "/pls/apex/testschema/items/list/active"
-        )
+        self.assertEqual(self.bridge.last_endpoint, "/pls/apex/testschema/items/list/active")
 
     def test_add_path_to_custom_url(self):
         url = "/pls/apex/testschema/items/list"
@@ -262,12 +260,14 @@ class TestErrorHandling(unittest.TestCase):
 
     def test_connection_error_raises_apex_connection_error(self):
         import requests as req
+
         self.mock_session.get.side_effect = req.exceptions.ConnectionError("refused")
         with self.assertRaises(ApexConnectionError):
             self.bridge.send_request("GET")
 
     def test_timeout_raises_apex_connection_error(self):
         import requests as req
+
         self.mock_session.get.side_effect = req.exceptions.Timeout("timed out")
         with self.assertRaises(ApexConnectionError):
             self.bridge.send_request("GET")
