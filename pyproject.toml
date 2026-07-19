@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "apex-restpy"
-version = "1.0.0"
+version = "0.1.0"
 description = "A Python library for connecting to Oracle APEX RESTful APIs — Python adaptation of ApexBridge."
 readme = "README.md"
 license = { file = "LICENSE" }
